@@ -1,0 +1,33 @@
+<%= form_for(@grade) do |f| %>
+<% if @grade.errors.any?  %>
+<div id="error_explanations">
+  <h2><%= pluralize(@grade.errors.count, "error") %> prohibited this grade from being saved:</h2>
+
+  <ul>
+    <% @grade.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :child_id %><br>
+  <%= f.number_field :child_id %>
+</div>
+<div class="field">
+  <%= f.label :date %><br>
+  <%= f.date_field :date %>
+</div>
+<div class="field">
+  <%= f.label :description %><br>
+  <%= f.text_field :description %>
+</div>
+<div class="field">
+  <%= f.label :grade %><br>
+  <%= f.text_field :grade %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
