@@ -3,6 +3,6 @@
 <h1>Teachers</h1>
 
 <%= link_to "New Teacher", new_teacher_path %>
-<%= @teacher.each do |teacher| %>
+<%= @teachers.each do |teacher| %>
   <p><%= teacher.name %></p>
 <% end %>

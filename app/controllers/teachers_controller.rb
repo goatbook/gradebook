@@ -11,6 +11,7 @@ class TeachersController < ApplicationController
   end
 
   def edit
+    @teacher = Teacher.find(params[:id])
   end
 
   def create
@@ -23,15 +24,16 @@ class TeachersController < ApplicationController
     end
   end
 
+  def show
+    redirect_to edit_teacher_path(@teacher)
+  end
+
   def update
     if @teacher.update(teacher_params)
       redirect_to teachers_path, notice: 'Teacher was successfully updated.'
     else
       render :edit
     end
-  end
-
-  def show
   end
 
   def destroy
