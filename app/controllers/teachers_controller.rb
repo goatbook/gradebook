@@ -47,7 +47,7 @@ class TeachersController < ApplicationController
   end
 
   def teacher_params
-    params.require(:teacher).permit(:name, :email, :password_digest )
+    params.require(:teacher).permit(:name, :email, :password )
   end
 
   def make_session(teacher)
