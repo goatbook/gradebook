@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   get 'students_login/login'
   post 'students_login/login'
+
+  get 'parents_login/login'
+  post 'parents_login/login'
   # get 'logins/logout'
 
   resources :grades
