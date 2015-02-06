@@ -4,7 +4,7 @@ class CreateGrades < ActiveRecord::Migration
       t.date :date
       t.string :description
       t.string :score
-      t.integer :child_id
+      t.integer :student_id
 
       t.timestamps null: false
     end

@@ -1,6 +1,6 @@
-class CreateChildren < ActiveRecord::Migration
+class CreateStudents < ActiveRecord::Migration
   def change
-    create_table :children do |t|
+    create_table :students do |t|
       t.string :name
       t.string :email
       t.string :password_digest

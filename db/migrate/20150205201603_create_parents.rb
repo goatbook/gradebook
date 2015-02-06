@@ -4,7 +4,7 @@ class CreateParents < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.string :password_digest
-      t.integer :child_id
+      t.integer :student_id
 
       t.timestamps null: false
     end
