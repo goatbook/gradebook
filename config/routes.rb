@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'logins/login'
-  post 'logins/login'
+  get 'teachers_login/login'
+  post 'teachers_login/login'
 
+  get 'students_login/login'
+  post 'students_login/login'
   # get 'logins/logout'
 
   resources :grades
