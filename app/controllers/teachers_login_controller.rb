@@ -14,6 +14,6 @@ class TeachersLoginController < ApplicationController
 
   def logout
     session[:teacher_id] = nil
-    redirect_to logins_login_path
+    redirect_to teachers_login_login_path
   end
 end
