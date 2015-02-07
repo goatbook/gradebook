@@ -5,7 +5,7 @@ class TeachersLoginController < ApplicationController
       if teacher && teacher.authenticate(params[:password])
         session[:teacher_id] = teacher.id
         flash[:notice] = "Welcome!"
-        redirect_to parents_path
+        redirect_to teachers_path
       else
         flash.now[:notice] = "Nice try, hacker"
       end
