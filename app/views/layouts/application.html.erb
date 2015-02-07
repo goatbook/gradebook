@@ -21,6 +21,11 @@
     <%= link_to "Log Out", parents_login_logout_path %> 
   <% end %>
 
+  <% if (session[:teacher_id]) || (session[:student_id]) || (session[:parent_id])%> 
+    <%= link_to "Change Password", root_path %>
+  <% end %>
+
+
   <%= yield %>
 
 </body>
