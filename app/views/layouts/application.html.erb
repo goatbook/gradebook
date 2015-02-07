@@ -9,7 +9,19 @@
 </head>
 <body>
 
-<%= yield %>
+  <% if session[:teacher_id] %> 
+    <%= link_to "Log Out", teachers_login_logout_path %> 
+  <% end %>
+
+  <% if session[:student_id] %> 
+    <%= link_to "Log Out", students_login_logout_path %> 
+  <% end %>
+
+  <% if session[:parent_id] %> 
+    <%= link_to "Log Out", parents_login_logout_path %> 
+  <% end %>
+
+  <%= yield %>
 
 </body>
 </html>
