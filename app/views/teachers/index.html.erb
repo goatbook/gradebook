@@ -6,3 +6,8 @@
 <% @teachers.each do |teacher| %>
   <p><%= teacher.name %></p>
 <% end %>
+
+
+<%= link_to "New Student", new_student_path %>
+
+<%= @all_students %>
