@@ -9,7 +9,10 @@ Rails.application.routes.draw do
 
   get 'parents_login/login'
   post 'parents_login/login'
-  # get 'logins/logout'
+
+  get 'teachers_login/logout'
+  get 'students_login/logout'
+  get 'parents_login/logout'
 
   resources :grades
 
