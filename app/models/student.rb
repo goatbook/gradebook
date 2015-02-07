@@ -6,9 +6,6 @@ class Student < ActiveRecord::Base
 
 
   def self.all_students
-    students = []
-    self.all.each do |i|
-      students << i.name
-    end
+    return self.all
   end
 end

@@ -4,6 +4,7 @@ class TeachersController < ApplicationController
 
   def index
     @teachers = Teacher.all
+    @all_students = Student.all_students
   end
 
   def new
