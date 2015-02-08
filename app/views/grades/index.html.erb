@@ -1,2 +1,16 @@
-<h1>Grades#index</h1>
-<p>Find me in app/views/grades/index.html.erb</p>
+<p><id="notice"><%= notice %></p>
+<h1>Grades</h1>
+
+
+<% if session[:teacher_id] %>
+<%= link_to "Add Grades", new_grade_path %>
+<p><%= student_grades(@student) %></p>
+<% end %>
+
+<% if session[:student_id] %>
+<p><%= student_grades(@student) %></p>
+<% end %>
+
+<% if session[:parent_id] %>
+<p><%= student_grades(@student) %></p>
+<% end %>

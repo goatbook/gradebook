@@ -4,10 +4,10 @@ one:
   date: 2015-02-05
   description: MyString
   score: MyString
-  child_id: 1
+  student_id: 1
 
 two:
   date: 2015-02-05
   description: MyString
   score: MyString
-  child_id: 1
+  student_id: 1
