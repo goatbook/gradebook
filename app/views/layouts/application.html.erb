@@ -10,7 +10,7 @@
 <body>
 
   <% if session[:teacher_id] %> 
-    <p>Welcome to the gradebook, <%=session[:teacher_id]%>!</p>
+    <p>Welcome to the gradebook, <%= Teacher.find(session[:teacher_id]).name %>!</p>
     <%= link_to "Log Out", teachers_login_logout_path %> 
     <%= link_to "Change Password", teachers_login_logout_path %>
   <% end %>
