@@ -3,14 +3,14 @@
 
 
 <% if session[:teacher_id] %>
-<%= link_to "Add Grades", new_grade_path %>
-<p><%= student_grades(@student) %></p>
+<td><%= link_to '<button type="button">Add Grades</button>' .html_safe, new_grade_path %></td>
+  <p><%= student_grades(@student) %></p>
 <% end %>
 
 <% if session[:student_id] %>
-<p><%= student_grades(@student) %></p>
+  <p><%= student_grades(@student) %></p>
 <% end %>
 
 <% if session[:parent_id] %>
-<p><%= student_grades(@student) %></p>
+  <p><%= student_grades(@student) %></p>
 <% end %>
