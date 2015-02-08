@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
-    @all_parents = Parent.all_parents
+    @all_parents = Parent.all
   end
 
   def new
