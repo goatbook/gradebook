@@ -4,7 +4,7 @@ class GradesController < ApplicationController
 
   def index
     @grades = Grade.all
-    @student = Student.find(params[:student_id])
+    @student = Student.first
   end
 
   def new
