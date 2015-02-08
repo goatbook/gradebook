@@ -1,2 +1,9 @@
-<h1>Grades#show</h1>
-<p>Find me in app/views/grades/show.html.erb</p>
+<h1>Grade</h1>
+
+<p><%= @grade.description %></p>
+
+
+
+<td><%= link_to '<button type="button">Edit Grade</button>' .html_safe, edit_grade_path(@grade.id) %></td>
+<td><%= link_to '<button type="button">Delete Grade</button>' .html_safe, @grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<td><%= link_to '<button type="button">Back</button>' .html_safe, grades_path %>

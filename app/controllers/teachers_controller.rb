@@ -53,14 +53,13 @@ class TeachersController < ApplicationController
   end
 
   def teacher_params
-    params.require(:teacher).permit(:name, :email, :password )
+    params.require(:teacher).permit(:name, :email, :password)
   end
 
   def make_session(teacher)
     session[:teacher_id] = teacher.id
     session[:name] = "Jane Doe"
   end
-
 
   def check_logged_in
     if session[:teacher_id].blank?
