@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
-    @student.teacher = Teacher.find(params[:teacher_id])
+    @student.teacher = Teacher.find(session[:teacher_id])
   end
 
   def edit
