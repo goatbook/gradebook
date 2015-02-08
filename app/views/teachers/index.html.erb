@@ -20,7 +20,6 @@
         <td><%= student.created_at.to_date %></td>
         <td><%= student.name %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -43,7 +42,6 @@
         <td><%= teacher.created_at.to_date %></td>
         <td><%= teacher.name %></td>
         <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
