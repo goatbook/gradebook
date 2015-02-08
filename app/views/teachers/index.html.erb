@@ -1,14 +1,51 @@
 <p><id="notice"><%= notice %></p>
 
-<h1>Teachers</h1>
-
-<%= link_to "New Teacher", new_teacher_path %>
-<% @teachers.each do |teacher| %>
-  <p><%= teacher.name %></p>
-<% end %>
-
-
-<%= link_to "New Student", new_student_path %>
-<% @all_students.each do |student| %>
+<!-- <% @all_students.each do |student| %>
 <p><%= student.name %></p>
-<% end %>
+<% end %> -->
+
+<h3>Students</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Date Added</th>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @all_students.each do |student| %>
+      <tr>
+        <td><%= student.created_at.to_date %></td>
+        <td><%= student.name %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New Student", new_student_path %>
+
+<h3>Teachers</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Date Added</th>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <td><%= teacher.created_at.to_date %></td>
+        <td><%= teacher.name %></td>
+        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
+        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New Teacher", new_teacher_path %>
