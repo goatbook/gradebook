@@ -1,6 +1,8 @@
 <p><id="notice"><%= notice %></p>
 
+
 <p>Welcome to the gradebook, <%=session[:name]%> !</p>
+
 
 <h3>Students</h3>
 <table>
@@ -21,7 +23,7 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to "New Student", new_student_path %>
+<td><%= link_to '<button type="button">New Student</button>' .html_safe, new_student_path %></td>
 
 <h3>Teachers</h3>
 <table>
@@ -42,4 +44,4 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to "New Teacher", new_teacher_path %>
+<td><%= link_to '<button type="button">New Teacher</button>' .html_safe, new_teacher_path %></td>

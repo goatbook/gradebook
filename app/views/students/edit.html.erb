@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Delete this student', @student, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Back', student_path %>
+<td><%= link_to '<button type="button">Back</button>' .html_safe, student_path %></td>

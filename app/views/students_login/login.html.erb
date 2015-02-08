@@ -6,5 +6,5 @@
 <!-- could be "email", etc. with strings -->
 <%= password_field_tag :password, nil, placeholder: "Password" %>
 <%= submit_tag :login %>
-<p><%= link_to 'Back', root_path %></p>
+<p><td><%= link_to '<button type="button">Back</button>' .html_safe, root_path %></td></p>
 <% end %>

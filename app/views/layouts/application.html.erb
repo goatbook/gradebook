@@ -11,18 +11,18 @@
 
   <% if session[:teacher_id] %> 
     
-    <%= link_to "Log Out", teachers_login_logout_path %> 
-    <%= link_to "Change Password", teachers_login_logout_path %>
+    <td><%= link_to '<button type="button">Log Out</button>' .html_safe, teachers_login_logout_path %></td> 
+    <td><%= link_to '<button type="button">Change Password</button>' .html_safe, teachers_login_logout_path %></td>
   <% end %>
 
   <% if session[:student_id] %> 
-    <%= link_to "Log Out", students_login_logout_path %> 
-    <%= link_to "Change Password", students_login_logout_path %> 
+    <td><%= link_to '<button type="button">Log Out</button>' .html_safe, students_login_logout_path %></td> 
+    <td><%= link_to '<button type="button">Change Password</button>' .html_safe, students_login_logout_path %></td>
   <% end %>
 
   <% if session[:parent_id] %> 
-    <%= link_to "Log Out", parents_login_logout_path %> 
-    <%= link_to "Change Password", parents_login_logout_path %>
+    <td><%= link_to '<button type="button">Log Out</button>' .html_safe, sparents_login_logout_path %></td> 
+    <td><%= link_to '<button type="button">Change Password</button>' .html_safe, parents_login_logout_path %></td>
   <% end %>
 
   <%= yield %>

@@ -4,6 +4,7 @@ class GradesController < ApplicationController
 
   def index
     @grades = Grade.all
+    @student = Student.first
   end
 
   def new
@@ -15,7 +16,7 @@ class GradesController < ApplicationController
   end
 
   def create
-    @grade = Grade.new(teacher_params)
+    @grade = Grade.new(grade_params)
     if @grade.save
       flash[:success] = "Welcome to your page!"
       redirect_to grades_path, notice: 'Grade was successfully created.'

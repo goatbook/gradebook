@@ -4,10 +4,10 @@ one:
   name: MyString
   email: MyString
   password_digest: MyString
-  child_id: 1
+  student_id: 1
 
 two:
   name: MyString
   email: MyString
   password_digest: MyString
-  child_id: 1
+  student_id: 1

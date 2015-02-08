@@ -1,8 +1,8 @@
 <p> <%= @student.name %> </p>
-<%= link_to 'Edit this student', edit_student_path(@student.id) %>
-<%= link_to 'Add parent for this student', new_parent_path(student_id: @student.id) %>
-<%= link_to 'Delete this student', @student, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Back', teachers_path %>
+<td><%= link_to '<button type="button">Edit this student</button>' .html_safe, edit_student_path(@student.id) %><td>
+<td><%= link_to '<button type="button">Add parent for this student</button>' .html_safe, new_parent_path(student_id: @student.id) %><td>
+<td><%= link_to '<button type="button">Delete this student</button>' .html_safe, @student, method: :delete, data: { confirm: 'Are you sure?' } %><td>
+<td><%= link_to '<button type="button">Back</button>' .html_safe, teachers_path %><td>
 
 
 <%= session[:student_id] %>
