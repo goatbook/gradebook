@@ -8,8 +8,8 @@
 <table>
   <thead>
     <tr>
-      <th>Date Added</th>
       <th>Name</th>
+      <th>Email</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -17,9 +17,8 @@
   <tbody>
     <% @all_students.each do |student| %>
       <tr>
-        <td><%= student.created_at.to_date %></td>
-        <td><%= student.name %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to student.name, student_path(student.id) %></td>
+        <td><%= student.email %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,8 +29,8 @@
 <table>
   <thead>
     <tr>
-      <th>Date Added</th>
       <th>Name</th>
+      <th>Email</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -39,9 +38,8 @@
   <tbody>
     <% @teachers.each do |teacher| %>
       <tr>
-        <td><%= teacher.created_at.to_date %></td>
-        <td><%= teacher.name %></td>
-        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
+        <td><%= link_to teacher.name, edit_teacher_path(teacher.id) %></td>
+        <td><%= teacher.email %></td>
       </tr>
     <% end %>
   </tbody>

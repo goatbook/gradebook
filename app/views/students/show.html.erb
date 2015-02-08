@@ -1,2 +1,4 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<p> <%= @student.name %> </p>
+<%= link_to 'Edit this student', edit_student_path(@student.id) %>
+<%= link_to 'Delete this student', @student, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', teachers_path %>
