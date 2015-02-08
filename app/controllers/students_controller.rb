@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @teacher = Teacher.find(session[:teacher_id])
+    # @teacher = Teacher.find(session[:teacher_id])
   end
 
   def destroy

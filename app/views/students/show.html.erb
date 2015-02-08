@@ -4,7 +4,7 @@
 <%= link_to 'Delete this student', @student, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', teachers_path %>
 
-<%= Teacher.find(session[:teacher_id]).name %><br>
+
 <%= session[:student_id] %>
 <%= session.class %>
 <%= params[:student_id] %>

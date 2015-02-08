@@ -24,8 +24,8 @@
   <%= f.password_field :password %>
 </div>
 <div class="field">
-  <%= f.label :student_id %><br>
-  <%= f.text_field :name %>
+
+  <%= f.hidden_field :student_id, value: :student_id %>
 </div>
 <div class="actions">
   <%= f.submit %>

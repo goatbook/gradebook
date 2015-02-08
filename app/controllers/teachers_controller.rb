@@ -47,7 +47,7 @@ class TeachersController < ApplicationController
   private
   def set_teacher
     @teacher = Teacher.find(params[:id])
-    session[:teacher_id] = Teacher.find(params[:id]).name
+    session[:teacher_id] = Teacher.find(params[:id])
   end
 
   def teacher_params
