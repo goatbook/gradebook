@@ -25,18 +25,19 @@ class StudentsController < ApplicationController
 
   def update
     if @student.update(student_params)
-      redirect_to students_path, notice: 'Student was successfully updated.'
+      redirect_to teachers_path, notice: 'Student was successfully updated.'
     else
       render :edit
     end
   end
 
   def show
+    @teacher = Teacher.find(session[:teacher_id])
   end
 
   def destroy
     @student.destroy
-    redirect_to students_url, notice: 'Student was successfully destroyed.'
+    redirect_to teachers_url, notice: 'Student was successfully deleted.'
   end
 
   private

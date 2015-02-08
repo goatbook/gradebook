@@ -1,14 +1,49 @@
 <p><id="notice"><%= notice %></p>
 
-<h1>Teachers</h1>
 
-<%= link_to "New Teacher", new_teacher_path %>
-<% @teachers.each do |teacher| %>
-  <p><%= teacher.name %></p>
-<% end %>
+<h3>Students</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
 
-
+  <tbody>
+    <% @all_students.each do |student| %>
+      <tr>
+        <td><%= link_to student.name, student_path(student.id) %></td>
+        <td><%= student.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <%= link_to "New Student", new_student_path %>
+
 <% @all_students.each do |student| %>
   <p><%= student.name %></p>
 <% end %>
+
+
+<h3>Teachers</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <td><%= link_to teacher.name, edit_teacher_path(teacher.id) %></td>
+        <td><%= teacher.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New Teacher", new_teacher_path %>

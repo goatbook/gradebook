@@ -1,2 +1,6 @@
-<h1>Teachers#edit</h1>
-<p>Find me in app/views/teachers/edit.html.erb</p>
+<h1>Editing Teacher Records</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Delete this teacher', @teacher, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', teachers_path %>

@@ -39,12 +39,15 @@ class TeachersController < ApplicationController
 
   def destroy
     @teacher.destroy
-    redirect_to teachers_url, notice: 'Teacher was successfully destroyed.'
+    redirect_to teachers_url, notice: 'Teacher was successfully deleted.'
   end
+
+
 
   private
   def set_teacher
     @teacher = Teacher.find(params[:id])
+    session[:teacher_id] = Teacher.find(params[:id]).name
   end
 
   def teacher_params

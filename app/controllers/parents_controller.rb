@@ -5,6 +5,7 @@ class ParentsController < ApplicationController
 
   def new
     @parent = Parent.new
+    @parent.student = Student.find(params[:student_id])
   end
 
   def edit
