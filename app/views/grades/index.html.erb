@@ -1,15 +1,37 @@
 <p><id="notice"><%= notice %></p>
+
 <h1>Grades</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Grade</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
 
-<% if session[:teacher_id] %>
-<td><%= link_to '<button type="button">Add Grade</button>' .html_safe, new_grade_path %></td>
-  <p><%= student_grades(@student) %></p>
-<% end %>
+  <tbody>
+    <% @grades.each do |grade| %>
+      <tr>
+        <td><%= grade.date %>
+        <td><%= link_to grade.description, grade_path(grade.id) %></td>
+        <td><%= grade.score %></td>
+      </tr>
+    <% end %>
 
-<% if session[:student_id] %>
-  <p><%= student_grades(@student) %></p>
-<% end %>
 
-<% if session[:parent_id] %>
-  <p><%= student_grades(@student) %></p>
-<% end %>
+    <% if session[:teacher_id] %>
+    <p><%= student_grades(@student) %></p>
+      <td><%= link_to '<button type="button">Add Grade</button>' .html_safe, new_grade_path %></td>
+    <% end %>
+
+    <% if session[:student_id] %>
+      <p><%= student_grades(@student) %></p>
+    <% end %>
+
+    <% if session[:parent_id] %>
+      <p><%= student_grades(@student) %></p>
+    <% end %>
+  </tbody>
+</table>

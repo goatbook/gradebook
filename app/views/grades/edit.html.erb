@@ -2,4 +2,5 @@
 
 <%= render 'form' %>
 
+<td><%= link_to '<button type="button">Delete this grade</button>' .html_safe, @grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <td><%= link_to '<button type="button">Back</button>' .html_safe, teachers_path %></td>

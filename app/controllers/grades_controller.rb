@@ -26,7 +26,7 @@ class GradesController < ApplicationController
   end
 
   def show
-    redirect_to edit_grade_path(@grade)
+    
   end
 
   def update
