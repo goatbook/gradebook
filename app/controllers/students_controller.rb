@@ -4,11 +4,12 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
-    @all_parents = Parent.all_parents
+    @all_parents = Parent.all
   end
 
   def new
     @student = Student.new
+    @student.teacher = Teacher.find(session[:teacher_id])
   end
 
   def edit

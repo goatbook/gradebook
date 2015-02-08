@@ -4,9 +4,9 @@ class TeachersController < ApplicationController
 
   def index
     @session_teacher = Teacher.find(session[:teacher_id])
-
+    @all_students = Student.where(teacher_id: session[:teacher_id]).all
     @teachers = Teacher.all
-    @all_students = Student.all_students
+    # @all_students = Student.all_students.where(teacher_id: session[:teacher_id])
   end
 
   def new
