@@ -1,9 +1,8 @@
 <p><id="notice"><%= notice %></p>
 <h1>Grades</h1>
 
-
 <% if session[:teacher_id] %>
-<td><%= link_to '<button type="button">Add Grades</button>' .html_safe, new_grade_path %></td>
+<td><%= link_to '<button type="button">Add Grade</button>' .html_safe, new_grade_path %></td>
   <p><%= student_grades(@student) %></p>
 <% end %>
 
