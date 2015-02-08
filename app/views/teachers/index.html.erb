@@ -1,47 +1,59 @@
 <p><id="notice"><%= notice %></p>
 
 
-<p>Welcome to the gradebook, <%=session[:name]%> !</p>
+<% if @session_teacher %>
+  <p>Welcome to the gradebook, <%= @session_teacher.name %> !</p>
 
-
-<h3>Students</h3>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @all_students.each do |student| %>
+  <h3>Students</h3>
+  <table>
+    <thead>
       <tr>
-        <td><%= link_to student.name, student_path(student.id) %></td>
-        <td><%= student.email %></td>
+        <th>Name</th>
+        <th>Email</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<td><%= link_to '<button type="button">New Student</button>' .html_safe, new_student_path %></td>
+    </thead>
 
-<h3>Teachers</h3>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+    <tbody>
+      <% @all_students.each do |student| %>
+        <tr>
+          <td><%= link_to student.name, student_path(student.id) %></td>
+          <td><%= student.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <td><%= link_to '<button type="button">New Student</button>' .html_safe, new_student_path %></td>
 
-  <tbody>
-    <% @teachers.each do |teacher| %>
+  <h3>Teachers</h3>
+  <table>
+    <thead>
       <tr>
-        <td><%= link_to teacher.name, edit_teacher_path(teacher.id) %></td>
-        <td><%= teacher.email %></td>
+        <th>Name</th>
+        <th>Email</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<td><%= link_to '<button type="button">New Teacher</button>' .html_safe, new_teacher_path %></td>
+    </thead>
+
+    <tbody>
+      <% @teachers.each do |teacher| %>
+        <tr>
+          <td><%= link_to teacher.name, edit_teacher_path(teacher.id) %></td>
+          <td><%= teacher.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <td><%= link_to '<button type="button">New Teacher</button>' .html_safe, new_teacher_path %></td>
+
+<% end %>
+
+<% if false %> 
+  <p> Sorry student! You can't look at the gradebook! </p>
+  <!-- #add link here to direct them to a page that they can see -->
+<% end %>
+
+<% if false %> 
+  <p> Sorry parent! You can't look at the gradebook! </p>
+  <!-- #add link here to direct them to a page that they can see -->
+<% end %>

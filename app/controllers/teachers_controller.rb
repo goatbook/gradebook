@@ -3,6 +3,8 @@ class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
   def index
+    @session_teacher = Teacher.find(session[:teacher_id])
+
     @teachers = Teacher.all
     @all_students = Student.all_students
   end

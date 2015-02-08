@@ -1,2 +1,6 @@
-<h1>Parents#edit</h1>
-<p>Find me in app/views/parents/edit.html.erb</p>
+<h1>Editing Parent Records</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Delete this parent', @parent, method: :delete, data: { confirm: 'Are you sure?' } %>
+<td><%= link_to '<button type="button">Back</button>' .html_safe, student_path(@parent.student.id) %></td>

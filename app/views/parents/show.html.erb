@@ -1,5 +1,5 @@
 <p> <%= @parent.name %> </p>
 <p> <%= @parent.email %> </p>
 <td><%= link_to '<button type="button">Edit this parent</button>' .html_safe, edit_parent_path(@parent.id) %><td>
-<td><%= link_to '<button type="button">Delete this student</button>' .html_safe, @parent, method: :delete, data: { confirm: 'Are you sure?' } %><td>
-<td><%= link_to '<button type="button">Back</button>' .html_safe, student_path %><td>
+<td><%= link_to '<button type="button">Delete this parent</button>' .html_safe, @parent, method: :delete, data: { confirm: 'Are you sure?' } %><td>
+<td><%= link_to '<button type="button">Back</button>' .html_safe, student_path(@parent.student.id) %><td>

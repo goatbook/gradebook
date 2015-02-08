@@ -10,7 +10,6 @@
 <body>
 
   <% if session[:teacher_id] %> 
-    
     <td><%= link_to '<button type="button">Log Out</button>' .html_safe, teachers_login_logout_path %></td> 
     <td><%= link_to '<button type="button">Change Password</button>' .html_safe, teachers_login_logout_path %></td>
   <% end %>

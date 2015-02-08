@@ -17,7 +17,7 @@ class ParentsController < ApplicationController
     @parent = Parent.new(parent_params)
     if @parent.save
       flash[:notice]="Parent was successfully created"
-      redirect_to parents_path
+      redirect_to student_path(@parent.student.id)
     else
       render :new
     end
@@ -28,11 +28,17 @@ class ParentsController < ApplicationController
   end
 
   def update
-    @parent = Parent.find(params[:id])
+    if @parent.update(parent_params)
+      redirect_to student_path(@parent.student.id), notice: 'Student was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @parent = Parent.find(params[:id])
+    old_student_id = @parent.student.id
+    @parent.destroy
+    redirect_to student_path(old_student_id), notice: 'Parent was successfully deleted.'
   end
 
   private def parent_params
