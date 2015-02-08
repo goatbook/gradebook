@@ -1,4 +1,24 @@
 <p> <%= @student.name %> </p>
+
+  <h3><%= @student.name %>'s Parents</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @all_parents.each do |parent| %>
+        <tr>
+          <td><%= link_to parent.name, parent_path(parent.id) %></td>
+          <td><%= parent.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <td><%= link_to '<button type="button">Edit this student</button>' .html_safe, edit_student_path(@student.id) %><td>
 <td><%= link_to '<button type="button">Add parent for this student</button>' .html_safe, new_parent_path(student_id: @student.id) %><td>
 <td><%= link_to '<button type="button">Delete this student</button>' .html_safe, @student, method: :delete, data: { confirm: 'Are you sure?' } %><td>

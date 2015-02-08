@@ -1,4 +1,5 @@
 class ParentsController < ApplicationController
+  before_action :set_parent, only: [:show, :edit, :update, :destroy]
   def index
     @parents = Parent.all
   end
@@ -23,7 +24,7 @@ class ParentsController < ApplicationController
   end
 
   def show
-    redirect_to edit_parent_path(@parent)
+
   end
 
   def update
@@ -36,5 +37,9 @@ class ParentsController < ApplicationController
 
   private def parent_params
     params.require(:parent).permit(:name, :email, :password, :student_id)
+  end
+
+  private def set_parent
+    @parent = Parent.find(params[:id])
   end
 end

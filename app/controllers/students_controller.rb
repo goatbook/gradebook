@@ -4,6 +4,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    @all_parents = Parent.all_parents
   end
 
   def new
@@ -33,11 +34,15 @@ class StudentsController < ApplicationController
 
   def show
     # @teacher = Teacher.find(session[:teacher_id])
+    @all_parents = Parent.all_parents
   end
 
   def destroy
     @student.destroy
     redirect_to teachers_url, notice: 'Student was successfully deleted.'
+  end
+
+  def display_parents
   end
 
   private

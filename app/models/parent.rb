@@ -3,4 +3,7 @@ class Parent < ActiveRecord::Base
   belongs_to :student
 
   validates :email, presence: true
+  def self.all_parents
+    return self.all
+  end
 end
