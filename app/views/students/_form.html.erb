@@ -24,10 +24,10 @@
   <%= f.password_field :password %>
 </div>
 <div class="field">
-  <%= f.label :teacher_id %><br>
-  <%= f.number_field :teacher_id %>
+  <%= f.hidden_field :teacher_id%>
 </div>
 <div class="actions">
   <%= f.submit %>
 </div>
 <% end %>
+<%= params %>
