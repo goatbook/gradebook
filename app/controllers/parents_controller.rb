@@ -41,11 +41,13 @@ class ParentsController < ApplicationController
     redirect_to student_path(old_student_id), notice: 'Parent was successfully deleted.'
   end
 
-  private def parent_params
+  private
+
+  def parent_params
     params.require(:parent).permit(:name, :email, :password, :student_id)
   end
 
-  private def set_parent
+  def set_parent
     @parent = Parent.find(params[:id])
   end
 end
