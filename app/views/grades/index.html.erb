@@ -19,19 +19,7 @@
         <td><%= grade.score %></td>
       </tr>
     <% end %>
-
-
-    <% if session[:teacher_id] %>
-    <p><%= student_grades(@student) %></p>
-      <td><%= link_to '<button type="button">Add Grade</button>' .html_safe, new_grade_path %></td>
-    <% end %>
-
-    <% if session[:student_id] %>
-      <p><%= student_grades(@student) %></p>
-    <% end %>
-
-    <% if session[:parent_id] %>
-      <p><%= student_grades(@student) %></p>
-    <% end %>
+    <td><%= link_to '<button type="button">Add grade for this student</button>' .html_safe, new_grade_path %></td>
+    <td><%= link_to '<button type="button">Back</button>' .html_safe,grades_path %></td>
   </tbody>
 </table>

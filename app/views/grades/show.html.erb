@@ -12,14 +12,14 @@
 
   <tbody>
     <tr>
-      <td><%= @grade.date %>
-        <td><%= @grade.description %></td>
-        <td><%= @grade.score %></td>
+      <td><%= grade.date %>
+        <td><%= grade.description %></td>
+        <td><%= grade.score %></td>
       </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-
+<p><%= student_grades %></p>
 <td><%= link_to '<button type="button">Edit Grade</button>' .html_safe, edit_grade_path(@grade.id) %></td>
 <td><%= link_to '<button type="button">Delete Grade</button>' .html_safe, @grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <td><%= link_to '<button type="button">Back</button>' .html_safe,grades_path %></td>

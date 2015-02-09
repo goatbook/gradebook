@@ -3,16 +3,24 @@ class GradesController < ApplicationController
   before_action :set_grade, only: [:show, :edit, :update, :destroy]
 
   def index
+    @current_student = Student.where(grade_id: session[:grade_id]).all
     @grades = Grade.all
-    @student = Student.first
   end
 
   def new
-    @grade = Grade.new
+    if session[:user_type] == "teacher"
+      @grade = Grade.new
+    else
+      redirect_to root_path, notice: 'You cannot see that page.'
+    end
   end
 
   def edit
-    @grade = Grade.find(params[:id])
+    if session[:user_type] == "teacher"
+      @grade = Grade.find(params[:id])
+    else
+      redirect_to root_path, notice: 'You cannot see that page.'
+    end
   end
 
   def create
@@ -21,30 +29,34 @@ class GradesController < ApplicationController
       flash[:success] = "Welcome to your page!"
       redirect_to grades_path, notice: 'Grade was successfully created.'
     else
-      render :new
+      render :new, notice: 'Your grade was not saved. Please try again.'
     end
   end
 
   def show
-    
   end
 
   def update
     if @grade.update(grade_params)
       redirect_to grades_path, notice: 'Grade was successfully updated.'
     else
-      render :edit
+      render :edit, notice: 'Your update was not saved. Please try again.'
     end
   end
 
   def destroy
-    @grade.destroy
-    redirect_to grades_url, notice: 'Grade was successfully destroyed.'
+    if session[:user_type] == "teacher"
+      @grade.destroy
+      redirect_to grades_url, notice: 'Grade was successfully destroyed.'
+    else
+      redirect_to grades_path, notice: 'You cannot see that page.'
+    end
   end
 
   private
   def set_grade
     @grade = Grade.find(params[:id])
+    # session[:grade_id] = Grade.find(params[:id])
   end
 
   def grade_params
