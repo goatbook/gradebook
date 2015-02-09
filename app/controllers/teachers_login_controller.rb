@@ -4,7 +4,6 @@ class TeachersLoginController < ApplicationController
       teacher = Teacher.find_by_email(params[:email])
       if teacher && teacher.authenticate(params[:password])
         session[:teacher_id] = teacher.id
-        flash[:notice] = "Welcome!"
         redirect_to teachers_path
       else
         flash.now[:notice] = "Nice try, hacker"
@@ -16,6 +15,7 @@ class TeachersLoginController < ApplicationController
     teacher = Teacher.find_by_id(session[:teacher_id])
       if teacher && teacher.authenticate(params[:old_password])
         teacher.update(:password => params[:new_password])
+        flash[:notice] = "Password successfully updated"
         redirect_to teachers_path
       end
   end
