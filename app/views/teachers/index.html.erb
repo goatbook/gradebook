@@ -4,7 +4,7 @@
 
 <% if @session_teacher %>
   <p>Welcome to the gradebook, <%= @session_teacher.name %>!</p>
-
+  <td><%= link_to '<button type="button">Change Password</button>' .html_safe, teachers_login_change_password_path %></td>
 
   <h3>Students</h3>
   <table>

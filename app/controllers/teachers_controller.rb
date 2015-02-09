@@ -14,7 +14,7 @@ class TeachersController < ApplicationController
   end
 
   def edit
-    @teacher = Teacher.find(params[:id])
+  #   @teacher = Teacher.find(params[:id])
   end
 
   def create
@@ -49,7 +49,7 @@ class TeachersController < ApplicationController
   private
   def set_teacher
     @teacher = Teacher.find(params[:id])
-    session[:teacher_id] = Teacher.find(params[:id])
+    
   end
 
   def teacher_params
@@ -58,7 +58,7 @@ class TeachersController < ApplicationController
 
   def make_session(teacher)
     session[:teacher_id] = teacher.id
-    session[:name] = "Jane Doe"
+    session[:name] = teacher.name
   end
 
   def check_logged_in

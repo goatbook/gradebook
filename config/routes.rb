@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get 'parents_login/login'
   post 'parents_login/login'
 
+  get 'teachers_login/change_password'
+  post 'teachers_login/change_password'
+
   get 'teachers_login/logout'
   get 'students_login/logout'
   get 'parents_login/logout'
