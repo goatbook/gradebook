@@ -12,6 +12,14 @@ class TeachersLoginController < ApplicationController
     end
   end
 
+  def change_password
+    teacher = Teacher.find_by_id(session[:teacher_id])
+      if teacher && teacher.authenticate(params[:old_password])
+        teacher.update(:password => params[:new_password])
+        redirect_to teachers_path
+      end
+  end
+
   def logout
     session[:teacher_id] = nil
     redirect_to teachers_login_login_path
